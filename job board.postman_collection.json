@@ -1,0 +1,943 @@
+{
+	"info": {
+		"_postman_id": "63054876-026e-4675-a5ad-66ea97f61daf",
+		"name": "job board",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29980792"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "hassan",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "ezz",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hassan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "hassan123",
+									"type": "text"
+								},
+								{
+									"key": "recoveryEmail",
+									"value": "mohamed@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobileNumber",
+									"value": "010103516302",
+									"type": "text"
+								},
+								{
+									"key": "DOB",
+									"value": "20-12-2003",
+									"type": "text"
+								},
+								{
+									"key": "pic",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signUp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"samir@gmail.com\",\r\n    \"password\":\"samir123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccount",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im0uc2VyYWcxOTA1QGdtYWlsLmNvbSIsImlkIjoiNjZhZTU4OTcyNzM3YWE4MjVmMjMwNDlkIiwiaWF0IjoxNzIyNzAyMjkyLCJleHAiOjE3MjI3MDU4OTJ9.U51kdqeOuXki34e0cGHBTYOfzTa1RNq5-iF6Sk1MJIE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "newFName",
+									"value": "mohamed",
+									"type": "text"
+								},
+								{
+									"key": "newLName",
+									"value": "hany",
+									"type": "text"
+								},
+								{
+									"key": "newEmail",
+									"value": "m.serag192@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "newMobileNum",
+									"value": "01010356963",
+									"type": "text"
+								},
+								{
+									"key": "newRecoveryEmail",
+									"value": "m.s@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "newDOB",
+									"value": "19-5-2002",
+									"type": "text"
+								},
+								{
+									"key": "newPic",
+									"type": "file",
+									"src": "/D:/My Cv/myPic/me.jpg"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/updateAccount?oldPublicId=Job_Board/USERS/9cOojEs3tSsyW/user_picture/wtcno7u6fidh73ea9mjx",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"updateAccount"
+							],
+							"query": [
+								{
+									"key": "oldPublicId",
+									"value": "Job_Board/USERS/9cOojEs3tSsyW/user_picture/wtcno7u6fidh73ea9mjx"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im0uc2VyYWcxOTA1QGdtYWlsLmNvbSIsImlkIjoiNjZhOTQ3NWI0MDI0YWY5ZmMyNWFhNzFkIiwiaWF0IjoxNzIyMzgyOTU0LCJleHAiOjE3MjIzODY1NTR9.A8LrbtS8lyLXljaVYS9QGFR-2DSsQ-Zo2DHXmiuSReI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/deleteAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"deleteAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserAccountData",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im0uc2VyYWcxOTA1QGdtYWlsLmNvbSIsImlkIjoiNjZhOTdiZjZhY2UxNWY0ODQwZWEyMzdiIiwiaWF0IjoxNzIyMzgzNDE2LCJleHAiOjE3MjIzODcwMTZ9.ErdQ3OVnET3AIM_LD_9ijQPbxhNLFfOli7gqytaXvsE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/getUserAccountData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"getUserAccountData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAnyUsersProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/getAnyUsersProfile/66a97bf6ace15f4840ea237b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"getAnyUsersProfile",
+								"66a97bf6ace15f4840ea237b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAccountsByEmail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recoveryEmail\":\"mohamed@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/getAllAccountsByEmail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"getAllAccountsByEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im0uc2VyYWcxOTA1QGdtYWlsLmNvbSIsImlkIjoiNjZhOTdiZjZhY2UxNWY0ODQwZWEyMzdiIiwiaWF0IjoxNzIyMzgzNDE2LCJleHAiOjE3MjIzODcwMTZ9.ErdQ3OVnET3AIM_LD_9ijQPbxhNLFfOli7gqytaXvsE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"mohamed1211\",\r\n    \"newPassword\":\"mohamed123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/updatePassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgetPassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"m.serag1905@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/forgetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"m.serag1905@gmail.com\",\r\n    \"OTP\":\"ao4ogh\",\r\n    \"newPassword\":\"mohamed123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "addCompany",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFobWVkQGdtYWlsLmNvbSIsImlkIjoiNjZhZWNiYjY2MmVlN2Y3OTc1MTBjYmE2IiwiaWF0IjoxNzIyNzM0MDEzLCJleHAiOjE3MjI3Mzc2MTN9.o98WcadAI5bz4z1fL6fWJfa7ayGhnswlIFg_aB_PDbw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "companyName",
+									"value": "alarabia",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "good electronics",
+									"type": "text"
+								},
+								{
+									"key": "industry",
+									"value": "electronics",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "cairo, Egypt",
+									"type": "text"
+								},
+								{
+									"key": "numberOfEmployees",
+									"value": "400",
+									"type": "text"
+								},
+								{
+									"key": "companyEmail",
+									"value": "alarabia@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/C:/Users/M.hany/Downloads/alarabia.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/addCompany",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"addCompany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCompanyData",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im0uc2VyYWcxOTA1QGdtYWlsLmNvbSIsImlkIjoiNjZhZTU4OTcyNzM3YWE4MjVmMjMwNDlkIiwiaWF0IjoxNzIyNzMxNzA1LCJleHAiOjE3MjI3MzUzMDV9.5b3ggT7utBZ9ZuaGKAu8xfCuOApfbVNZTUeXKgFKl8I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "newDescription",
+									"value": "electronics and software",
+									"type": "text"
+								},
+								{
+									"key": "newNumberOfEmployees",
+									"value": "900",
+									"type": "text"
+								},
+								{
+									"key": "newCompanyName",
+									"value": "samnsung",
+									"type": "text"
+								},
+								{
+									"key": "newIndustry",
+									"value": "electronics and software",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "newAddress",
+									"value": "Sharqia, Egypt",
+									"type": "text"
+								},
+								{
+									"key": "newCompanyEmail",
+									"value": "samnsung@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "newLogo",
+									"type": "file",
+									"src": "/C:/Users/M.hany/Downloads/samnsung2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/updateCompanyData?oldPublicId=Job_Board/COMPANIES/samnsung/company_logo/uujaulx5sj54lleyihnj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"updateCompanyData"
+							],
+							"query": [
+								{
+									"key": "oldPublicId",
+									"value": "Job_Board/COMPANIES/samnsung/company_logo/uujaulx5sj54lleyihnj"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCompanyData",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im0uc2VyYWcxOTA1QGdtYWlsLmNvbSIsImlkIjoiNjZhZTU4OTcyNzM3YWE4MjVmMjMwNDlkIiwiaWF0IjoxNzIyNzM1MTc3LCJleHAiOjE3MjI3Mzg3Nzd9.PsRRGEoSWCGmnMFvxemV2pLK57bdL1jrF2-GyUOiSB4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/deleteCompanyData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"deleteCompanyData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchForCompanyWithAName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFobWVkQGdtYWlsLmNvbSIsImlkIjoiNjZhOTdkNzAyZGFlOGRjNTRmNjdhMDlhIiwiaWF0IjoxNzIyMzg0MjgxLCJleHAiOjE3MjIzODc4ODF9.rzzJqN2RoLHjcdPAc6Cvl17DdTBbHLHdp4jqIsgoVek",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\":\"Alarabia Group\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/searchForCompanyWithAName",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"searchForCompanyWithAName"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompanyData",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im0uc2VyYWcxOTA1QGdtYWlsLmNvbSIsImlkIjoiNjZhOTdiZjZhY2UxNWY0ODQwZWEyMzdiIiwiaWF0IjoxNzIyMzg0NzM3LCJleHAiOjE3MjIzODgzMzd9.UhZpXRLATtBQQ4qae4QpQZGvnn8lIF9SZ-w-QLUZCoI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/getCompanyData/66a97f022dae8dc54f67a0ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"getCompanyData",
+								"66a97f022dae8dc54f67a0ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllApplicationsForSpecificJob",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFobWVkQGdtYWlsLmNvbSIsImlkIjoiNjZhOTdkNzAyZGFlOGRjNTRmNjdhMDlhIiwiaWF0IjoxNzIyMzg0NDEwLCJleHAiOjE3MjIzODgwMTB9.uBhU1OVbpdKwx5OAXzXyIjfy1ObBofuIYndY--pc4uQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/GetAllApplicationsForSpecificJob",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"GetAllApplicationsForSpecificJob"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job",
+			"item": [
+				{
+					"name": "addJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFobWVkQGdtYWlsLmNvbSIsImlkIjoiNjZhZWNiYjY2MmVlN2Y3OTc1MTBjYmE2IiwiaWF0IjoxNzIyNzM0MDEzLCJleHAiOjE3MjI3Mzc2MTN9.o98WcadAI5bz4z1fL6fWJfa7ayGhnswlIFg_aB_PDbw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\":\"sales\",\r\n    \"jobLocation\":\"onsite\",\r\n    \"workingTime\":\"fulltime\",\r\n    \"seniorityLevel\":\"mid-level\",\r\n    \"jobDescription\":\"person that has a good experiance in sales\",\r\n    \"softSkills\":[\"communication\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job/addJob",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"addJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateJob",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im0uc2VyYWcxOTA1QGdtYWlsLmNvbSIsImlkIjoiNjZhOTdiZjZhY2UxNWY0ODQwZWEyMzdiIiwiaWF0IjoxNzIyMzg1MDMwLCJleHAiOjE3MjIzODg2MzB9.gZbc23UqhCypPQete4Qh6BZ1EHne09F_ydrHnfCmaOs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"jobTitle\":\"back end , node.Js\",\r\n        \"jobLocation\":\"remotely\",\r\n        \"workingTime\":\"partTime\",\r\n        \"seniorityLevel\":\"mid-level\",\r\n        \"jobDescription\":\"skillfull developer required to develop high complexity sits\",\r\n        \"technicalSkills\":[\"node.js\",\"mongo DB\",\"express\",\"nest.js\"],\r\n        \"softSkills\":[\"communication\",\"project management\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job/updateJob?jobId=66a9829e67adce95d1920c33",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"updateJob"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "66a9829e67adce95d1920c33"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteJob",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFobWVkQGdtYWlsLmNvbSIsImlkIjoiNjZhZWNiYjY2MmVlN2Y3OTc1MTBjYmE2IiwiaWF0IjoxNzIyNzM1MzQ0LCJleHAiOjE3MjI3Mzg5NDR9.jsupphlV8mWULjHcSmDJf0_Eroc8DMHdmAMAOqc0xuA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/job/deleteJob?jobId=66aed687b0ab6876f694b507",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"deleteJob"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "66aed687b0ab6876f694b507"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllJobsWithCompaniesInfo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFobWVkQGdtYWlsLmNvbSIsImlkIjoiNjZhOTdkNzAyZGFlOGRjNTRmNjdhMDlhIiwiaWF0IjoxNzIyMzg1MTI1LCJleHAiOjE3MjIzODg3MjV9.q72k6HdKqLBY8Y2AEvxvtVGoE60AqU87jmCMFz_Vr8c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/job/getAllJobsWithCompaniesInfo?page=1&size=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"getAllJobsWithCompaniesInfo"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllJobsForSpecificCompany",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwiaWQiOiI2Njg0MjRmYmM0NGNjMjYyMmViNjBiYTAiLCJpYXQiOjE3MjE1MDI3MTMsImV4cCI6MTcyMTUwNjMxM30.8s-RANT5iQXpvhHPdu8PU1uo5vC2Yz1-YwD4MLcRlOo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/job/getAllJobsForSpecificCompany?companyName=samnsung",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"getAllJobsForSpecificCompany"
+							],
+							"query": [
+								{
+									"key": "companyName",
+									"value": "samnsung"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "applyToJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVsbGFoQGdtYWlsLmNvbSIsImlkIjoiNjZhZWQ2Y2RiMGFiNjg3NmY2OTRiNTBhIiwiaWF0IjoxNzIyNzM1MDEzLCJleHAiOjE3MjI3Mzg2MTN9.t5W8KnvVzFU9obVzB7JnQkeM0z_dUQetSdCQju9d86E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userTechSkills",
+									"value": "[\"html\",\"css\",\"js\"]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "userSoftSkills",
+									"value": "[\"communication\"]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "resume",
+									"type": "file",
+									"src": "/D:/My Cv/cv/Mohamed-Hany-Abd_Elfatah-CV.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/job/applyToJob?jobId=66aed687b0ab6876f694b507&companyName=alarabia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"applyToJob"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "66aed687b0ab6876f694b507"
+								},
+								{
+									"key": "companyName",
+									"value": "alarabia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJobsWithFilter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imhhc3NhbkBnbWFpbC5jb20iLCJpZCI6IjY2YTk5MzJlMjZjNjYzNWI5YWY1ZjI5MSIsImlhdCI6MTcyMjM4OTMxNiwiZXhwIjoxNzIyMzkyOTE2fQ.H-femF-aUYQp54jJKk8Ki26ILXkozEUsA6QUiMKbIqs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/job/getJobsWithFilter?jobLocation=remotely",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"getJobsWithFilter"
+							],
+							"query": [
+								{
+									"key": "jobLocation",
+									"value": "remotely"
+								},
+								{
+									"key": "workingTime",
+									"value": "fulltime",
+									"disabled": true
+								},
+								{
+									"key": "seniorityLevel",
+									"value": "mid-level",
+									"disabled": true
+								},
+								{
+									"key": "technicalSkills",
+									"value": "html",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
