@@ -166,8 +166,8 @@ export const deleteJob = async (req, res, next) => {
     // 6 - delete all related applications to that job
     await Application.deleteMany({ jobId });
     // 7 - delete the job with CVs from the host
-    await cloudinaryConnection().api.delete_resources_by_prefix(`${process.env.MAIN_MEDIA_FOLDER}/COMPANIES/${requirdCompany.companyHostFolderId}/${jobToBeDeleted.jobTitle}`);
-    await cloudinaryConnection().api.delete_folder(`${process.env.MAIN_MEDIA_FOLDER}/COMPANIES/${requirdCompany.companyHostFolderId}/${jobToBeDeleted.jobTitle}`);
+    await cloudinaryConnection().api.delete_resources_by_prefix(`${process.env.MAIN_MEDIA_FOLDER}/COMPANIES/${requirdCompany.companyHostFolderId}/JOBS/${jobToBeDeleted.jobTitle}`);
+    await cloudinaryConnection().api.delete_folder(`${process.env.MAIN_MEDIA_FOLDER}/COMPANIES/${requirdCompany.companyHostFolderId}/JOBS/${jobToBeDeleted.jobTitle}`);
     // 8 - return the response
     return res.status(200).json({
         success: true,
@@ -299,10 +299,10 @@ export const applyToJob = async (req, res, next) => {
         }
     } else {
         const { secure_url, public_id } = await cloudinaryConnection().uploader.upload(req.file.path, {
-            folder: `${process.env.MAIN_MEDIA_FOLDER}/COMPANIES/${requirdCompany.companyHostFolderId}/${requiredJob.jobTitle}/users_CVs`
+            folder: `${process.env.MAIN_MEDIA_FOLDER}/COMPANIES/${requirdCompany.companyHostFolderId}/JOBS/${requiredJob.jobTitle}/users_CVs`
         })
         // 7.1 - store the folder for rollback
-        req.folder = `${process.env.MAIN_MEDIA_FOLDER}/COMPANIES/${requirdCompany.companyHostFolderId}/${requiredJob.jobTitle}/users_CVs`;
+        req.folder = `${process.env.MAIN_MEDIA_FOLDER}/COMPANIES/${requirdCompany.companyHostFolderId}/JOBS/${requiredJob.jobTitle}/users_CVs`;
         userResume = {
             secure_url,
             public_id
